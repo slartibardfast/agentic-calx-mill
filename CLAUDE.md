@@ -781,3 +781,22 @@ in `cast/applying-personas.md` follows Powell, Keenan and McDaid (2007) on
 personas in XP, with later agile work cited alongside it. This manual is released
 into the public domain (Unlicense); the credit here is acknowledgement, not a
 license obligation.
+
+## Project specifics: calx-mill
+
+This host governs **calx-mill**, a Rust crate (edition 2021, no external
+dependencies) that models substrate throughput. The software lives as a bare
+store with worktrees at `software/calx-mill/`; the canonical worktree
+`software/calx-mill/main/` is where edits land and CI runs.
+
+- Build: `cargo build --release --locked`.
+- Test: `cargo test --release --locked` (the `tests/parity.rs` and
+  `tests/substrates.rs` suites).
+- Correctness: the core arithmetic is Kani-verified with `cargo kani`; proof
+  harnesses are `#[cfg(kani)]`-gated, so ordinary build and test never reference
+  Kani.
+- Behavioural (`.allium`) and timing (`.tla`) specs live with the code in the
+  calx-mill worktree, never under this host's `plan/`.
+
+Commits are authored as `David Connolly <david@connol.ly>` and pushed through the
+`connollydavid` account, which is a collaborator on the `slartibardfast` origin.
