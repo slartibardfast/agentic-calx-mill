@@ -1,0 +1,47 @@
+[receipt "classify"]
+    disposition = done
+    evidence = case a (empty host, no CLAUDE.md); host-lint --all/--prose/--log clean
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-17
+
+[receipt "embed" "calx-mill"]
+    disposition = done
+    evidence = .host-software calx-mill pin 1f648db; worktree software/calx-mill/main materialized; artifact f3694ff6 verified
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-17
+
+[receipt "remap"]
+    disposition = done
+    evidence = remap --check clean; fresh host, zero ordinal names to rename
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-17
+
+[receipt "publish"]
+    disposition = done
+    evidence = host-lifecycle book generated 6 pages; book --check every room-with-source renders
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-17
+
+[receipt "verify"]
+    disposition = done
+    evidence = validate plan/ call/ ok; software --check calx-mill at pin + artifact verified; book --check every room renders; reconcile clean; prose clean; hook tell-test pending install
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-17
+
+[receipt "release" "calx-mill"]
+    disposition = skip
+    reason = calx-mill adopted under the methodology at 0.1.0 (pre-existing, no vX.Y.Z tag yet); first methodology release not cut — pending operator decision on back-filling v0.1.0
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-17
+
+[receipt "embed" "host-lint"]
+    disposition = done
+    evidence = .host-software host-lint pin 241a870 (= upstream v0.14.2); worktree materialized; binary built; hooks installed (pre-commit, commit-msg)
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-17
+
+[receipt "release" "host-lint"]
+    disposition = done
+    evidence = consumed gating tool pinned at its upstream release tag v0.14.2 (241a870); not released from this host
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-17

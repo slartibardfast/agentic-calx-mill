@@ -1,0 +1,11 @@
+[receipt "adopt"]
+    disposition = done
+    evidence = .host stamp @ 8b578b2 adopted 2026-07-17; cast/ plan/ call/ scaffolded
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-17
+
+[receipt "upgrade"]
+    disposition = done
+    evidence = baseline ff04a94; up to date (0 applied out of order, 0 pending)
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-17

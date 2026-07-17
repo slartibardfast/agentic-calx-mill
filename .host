@@ -1,3 +1,4 @@
 template = "https://github.com/connollydavid/host-template"
 revision = "8b578b2e7d7156fe81b39d6d097bae9c0c138400"
 adopted  = "2026-07-17"
+baseline = "ff04a94"
