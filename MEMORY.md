@@ -51,6 +51,21 @@
   extending to a new substrate, workload-fit check) are use-cases under each
   persona, not separate personas.
 - Prose audit is strict to zero: persona titles use a colon (`Soren: the …`), not
-  an em-dash, because the `—` decoration and "false-range" phrasings warn under
+  an em-dash, because the   `—` decoration and "false-range" phrasings warn under
   `host-lifecycle prose`.
+
+### 2026-07-17 — promoted lacunae-remediation to calx-mill main (issue #1)
+- Planned as `plan/0001-lacunae-remediation` (three tasks: verify, promote,
+  re-pin). calx-mill `main` fast-forwarded `1f648db..f11bb05` and pushed; this
+  host re-pinned to `f11bb05` (artifact `7dfd5a3b`, verified by `--check`).
+- Verified myself before promoting: `cargo test` 108 green across six suites and
+  `cargo kani` 34/34 (kani is slow, ~minutes; run detached, it cannot live in a
+  gate `verify` that re-runs on every check).
+- calx-mill is still Cargo `0.1.0`; lacunae-remediation did not bump it, so no new
+  tag. `v0.1.0` stays at `1f648db`; the pin now sits past it (normal 0.1.0
+  development toward the next release).
+- `host-lifecycle software --verify-build` is UNVERIFIABLE here (no
+  docker/podman); it needs a container to rebuild in the recorded toolchain. The
+  `--check` gate (worktree hash vs recorded hash) still passes. The canonical
+  container hash for f11bb05 stays pending per `call/0000`.
 
