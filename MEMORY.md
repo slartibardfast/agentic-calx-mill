@@ -39,3 +39,18 @@
   (`David Connolly <david@connol.ly>`), set repo-local in
   `software/calx-mill/main`.
 
+### 2026-07-17 — cast built on the modality split
+- calx-mill's cast splits on modality (`call/0001`), not on substrate. Two primary
+  personas with project-original names (not the template's Mara/Wren):
+  [Soren](cast/soren.md) the human operator (embodied, interactive, verifies by
+  intuition) and [Vega](cast/vega.md) the agentic model user (textual, drives the
+  CLI, needs stable deterministic structured output + explicit failure). Both are
+  primary because an interface for one cannot satisfy the other; calx-mill owes
+  each its own accommodation.
+- The substrate scenarios (predicted-vs-measured occupancy close on a GPU,
+  extending to a new substrate, workload-fit check) are use-cases under each
+  persona, not separate personas.
+- Prose audit is strict to zero: persona titles use a colon (`Soren: the …`), not
+  an em-dash, because the `—` decoration and "false-range" phrasings warn under
+  `host-lifecycle prose`.
+
