@@ -45,3 +45,9 @@
     evidence = consumed gating tool pinned at its upstream release tag v0.14.2 (241a870); not released from this host
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-17
+
+[receipt "release" "calx-mill"]
+    disposition = done
+    evidence = annotated tag v0.1.0 pushed to slartibardfast/calx-mill at pin 1f648db (first release; calx-mill fully tested + Kani-verified)
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-17
