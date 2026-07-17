@@ -3,12 +3,12 @@
 # `host-lifecycle software --materialize`); this recipe is the audit anchor.
 [software "calx-mill"]
     url       = https://github.com/slartibardfast/calx-mill.git
-    pin       = 1f648db6fc64792e70595be5e71da262387eb4ba
+    pin       = f11bb05602a8e6ba7e892cc90db82cc417468d03
     branch    = main
     build     = cargo build --release --locked
     toolchain = rust-1.96.1
     deploy    = main
-    artifact  = target/release/calx-mill f3694ff6c31c8bb6249314dbb7f0320cc457c67b27c3f4d473687c2761b1a223
+    artifact  = target/release/calx-mill 7dfd5a3baf76e5548aa727fd050b7f7d8c383a884abba59271746fc987ca8551
 
 # The gating tool. Its source is also the tools/host-lint submodule (for skills +
 # reference); recorded here so --install-hooks builds the verified binary and

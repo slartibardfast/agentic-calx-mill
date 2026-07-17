@@ -1,0 +1,21 @@
+[receipt "plan/0001#verify-lacunae"]
+    disposition = done
+    verify = cargo test --release --locked --manifest-path software/calx-mill/main/Cargo.toml && cargo kani --manifest-path software/calx-mill/main/Cargo.toml
+    inputs = software/calx-mill/main/Cargo.toml software/calx-mill/main/src software/calx-mill/main/tests
+    evidence = cargo test 108 green (59+13+22+3+5+6 across six suites); cargo kani 34/34 verified, 0 failures, at f11bb05
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-17
+
+[receipt "plan/0001#promote-main"]
+    disposition = done
+    verify = test "$(git -C software/calx-mill/main rev-parse main)" = "f11bb05602a8e6ba7e892cc90db82cc417468d03"
+    evidence = pushed main fast-forward 1f648db..f11bb05 to slartibardfast/calx-mill; origin/main = f11bb05
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-17
+
+[receipt "plan/0001#repin"]
+    disposition = done
+    verify = host-lifecycle software --check .
+    evidence = calx-mill pin advanced to f11bb05; artifact 7dfd5a3b verified by software --check; --verify-build UNVERIFIABLE here (no docker/podman), pending a container per call/0000
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-17

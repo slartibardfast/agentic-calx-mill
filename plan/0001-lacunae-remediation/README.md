@@ -1,8 +1,7 @@
 # 0001 lacunae-remediation
 
-Promote the lacunae-remediation line (branch `lacunae-remediation` @ f11bb05,
-fast-forwardable from `main` @ 1f648db) to calx-mill `main`, and re-pin this host
-to it. The line delivers the gate exit-code contract v2 (0 CERTIFIED, 3
+Promote the lacunae-remediation line, whose tip f11bb05 fast-forwards calx-mill
+`main` past 1f648db, and re-pin this host to it. The line delivers the gate exit-code contract v2 (0 CERTIFIED, 3
 PROVISIONAL, 2 REFUSED, 4 usage; PROVISIONAL no longer exits 0), instrument and
 tensor-pipe hardening, strict-mode parsers, and the lacunae review. It is the
 subject of calx-mill issue #1.
