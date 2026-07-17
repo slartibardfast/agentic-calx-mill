@@ -31,3 +31,11 @@
 - `cast/` (personas) is empty. The methodology asks for at least one persona
   built by discussion with the human before planning the work it serves.
 
+### 2026-07-17 — v0.1.0 tagged (corrects the release skip above)
+- Back-filled the `v0.1.0` annotated tag on `slartibardfast/calx-mill` at pin
+  `1f648db` (its first release; the repo is fully tested and Kani-verified). The
+  `release` phase for calx-mill is now recorded `done`; the earlier skip is
+  superseded. calx-mill's worktree needed its own `user.name`/`user.email`
+  (`David Connolly <david@connol.ly>`), set repo-local in
+  `software/calx-mill/main`.
+
