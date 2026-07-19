@@ -86,3 +86,14 @@
   `--check` reports that as a noted difference. The canonical proof is
   `--verify-build`.
 
+### 2026-07-19 — host-lint canonical verify lane (call/0003)
+- host-lint's `toolchain` is now
+  `docker.io/library/rust@sha256:443dd9a3…` (rustc 1.95.0, its own
+  `rust-toolchain.toml` pin); canonical artifact hash `447e1979…`, proven by
+  `--verify-build`. Both components are now canonical; `call/0000` is fully
+  retired (status: superseded by `call/0002` and `call/0003`). The full
+  `software --verify-build` is green for both (2 reproduced, 0 deferred/exempt),
+  and the hook binary is the canonical build.
+- host-lint's build fetches `host-grammar` from GitHub, so its verify container
+  runs with network (no `deps-bundle` yet).
+
