@@ -6,9 +6,9 @@
     pin       = f11bb05602a8e6ba7e892cc90db82cc417468d03
     branch    = main
     build     = cargo build --release --locked
-    toolchain = rust-1.96.1
+    toolchain = docker.io/library/rust@sha256:44637ff22d0a6571a221bfaf137849711ad02ff4723dbb4736e297538f6a3e60
     deploy    = main
-    artifact  = target/release/calx-mill 7dfd5a3baf76e5548aa727fd050b7f7d8c383a884abba59271746fc987ca8551
+    artifact  = target/release/calx-mill 17a3799e21b7a7a12168a65d1d3fb19935ad1308920b5021d1b1b1c86cf2045f
 
 # The gating tool. Its source is also the tools/host-lint submodule (for skills +
 # reference); recorded here so --install-hooks builds the verified binary and
