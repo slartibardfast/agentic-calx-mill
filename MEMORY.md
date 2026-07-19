@@ -69,3 +69,20 @@
   `--check` gate (worktree hash vs recorded hash) still passes. The canonical
   container hash for f11bb05 stays pending per `call/0000`.
 
+### 2026-07-19 — canonical container toolchain wired for calx-mill
+- Rootless podman 6.0.1 installed on this host (`/etc/subuid` + `/etc/subgid` set
+  for dconnolly). calx-mill's `toolchain` is now the digest-pinned OCI image
+  `docker.io/library/rust@sha256:44637ff2…` (rustc 1.97.0); the canonical artifact
+  hash for pin f11bb05 is `17a3799e…`, proven by `software --verify-build` (green).
+  This retires `call/0000`'s interim stance for calx-mill; see `call/0002`.
+- The verify lane mounts the worktree at `/src` inside the container, so the build
+  is path-normalised; no `--remap-path-prefix` needed. To get the full canonical
+  hash, build once via that mount and `sha256sum`, or read it off the DRIFT line of
+  a first `--verify-build`.
+- `host-lint` stays ambient (consumed tool; its own repo verifies it). Giving it a
+  verify lane here would need its own OCI image (it pins 1.95.0); left for if
+  needed.
+- A host-ambient `cargo build` in the dev worktree differs from the canonical hash;
+  `--check` reports that as a noted difference. The canonical proof is
+  `--verify-build`.
+
