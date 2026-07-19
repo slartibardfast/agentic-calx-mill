@@ -19,8 +19,8 @@
     pin       = 241a870b52325bb261724c567ba175622895bf8d
     branch    = main
     build     = cargo build --release --locked
-    toolchain = rust-1.96.1
+    toolchain = docker.io/library/rust@sha256:443dd9a3260cf23c22fc05051dd5661dd7b4028d3d25dbaffab6563b63c3539c
     deploy    = main
-    artifact  = target/release/host-lint 941a47eb5665071144a1452a071de0f1bea3639600f4e55d171bd5439a630f98
+    artifact  = target/release/host-lint 447e19792667e933007bf0c3bcf734f7a86aaa3ad0a7afc7056f4a4ea0392e5b
     hooks     = pre-commit
 

@@ -1,6 +1,6 @@
 # calx-mill reproducible-build toolchain
 
-- Status: accepted
+- Status: superseded by call/0002 and call/0003
 - Scope: software
 - Date: 2026-07-17
 
